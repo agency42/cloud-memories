@@ -7,3 +7,5 @@ fly.toml
 Dockerfile
 .dockerignore
 .github
+**/venv/
+

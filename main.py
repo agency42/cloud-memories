@@ -5,11 +5,13 @@ import json
 import logging
 from logging.handlers import RotatingFileHandler
 from typing import Any, Dict, List, Optional
-from datetime import datetime, UTC
+from datetime import datetime
 from dotenv import load_dotenv
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 from neo4j import GraphDatabase
+
+app = FastAPI()
 
 # Add the project root to Python path
 sys.path.append(str(Path(__file__).parent))
@@ -140,6 +142,7 @@ class GetAllRequest(BaseModel):
 def ping():
     """A simple ping endpoint to verify that the server is running."""
     return {"status": "ok", "message": "Memory server is up and running!"}
+
 
 @app.post("/add")
 def add_memory(req: AddRequest):
