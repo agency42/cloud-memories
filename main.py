@@ -143,6 +143,9 @@ def ping():
     """A simple ping endpoint to verify that the server is running."""
     return {"status": "ok", "message": "Memory server is up and running!"}
 
+@app.get("/health")
+def health():
+    return {"status": "ok"}
 
 @app.post("/add")
 def add_memory(req: AddRequest):
