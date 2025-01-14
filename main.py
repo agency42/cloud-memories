@@ -312,3 +312,7 @@ async def startup_event():
     logger.info(f"Neo4j URI: {os.getenv('NEO4J_URI')}")
     logger.info(f"Qdrant URL: {os.getenv('QDRANT_URL')}")
     logger.info("Configuration loaded successfully")
+
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run(app, host="0.0.0.0", port=int(os.getenv("PORT", 8080)))
