@@ -18,3 +18,4 @@ rank_bm25
 redisvl
 sentence_transformers
 uvicorn
+gunicorn
